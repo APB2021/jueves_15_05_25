@@ -4,9 +4,7 @@ USE incidencias;
 CREATE TABLE tecnicos (
     id_tecnico INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL.
-    id_incidencia INT NOT NULL,
-    FOREIGN KEY (id_) REFERENCES tecnicos(id_)
+    email VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE incidencias (
