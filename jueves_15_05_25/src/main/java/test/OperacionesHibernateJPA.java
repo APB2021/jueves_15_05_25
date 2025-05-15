@@ -1,21 +1,19 @@
 package test;
 
-import dao.PersonaDAO;
-import modelo.Persona;
+import dao.IncidenciaDao;
+import modelo.Incidencia;
 
 public class OperacionesHibernateJPA {
 
 	public static void main(String[] args) {
-		try (PersonaDAO personaDao = new PersonaDAO()) {
-			// 1. Caso listar
-			personaDao.imprimirPersonas();
+		try (IncidenciaDao incidenciaDao = new IncidenciaDao()) {
 
-			// 2. Caso insertar
-			Persona persona = new Persona();
-			persona.setNombre("Carlos");
-			persona.setApellido("Lara");
-			persona.setEmail("clara@mail.com");
-			persona.setTelefono("55443322");
+			// insertar
+			Incidencia incidencia = new Incidencia();
+			incidencia.s("Carlos");
+			incidencia.setApellido("Lara");
+			incidencia.setEmail("clara@mail.com");
+			incidencia.setTelefono("55443322");
 
 			// personaDao.insertar(persona);
 
@@ -34,15 +32,6 @@ public class OperacionesHibernateJPA {
 //            personaDao.modificar(persona);
 //            personaDao.imprimirPersonas();
 
-			// 4. Caso eliminar
-			persona = new Persona();
-			persona.setIdPersona(6);
-
-			persona = personaDao.buscarPersonaPorId(persona);
-			System.out.println("persona encontrada = " + persona);
-
-			personaDao.eliminar(persona);
-			personaDao.imprimirPersonas();
 		}
 	}
 }
