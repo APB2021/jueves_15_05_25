@@ -1,0 +1,16 @@
+Una empresa necesita una aplicación que gestione incidencias técnicas.
+Cada incidencia tiene:
+
+- Un identificador
+- Titulo
+- Descripcion
+- Fecha de creacion
+- Estado (Abierta, En progreso, Cerrada)
+- Datos del técnico (nombre y email)
+
+Siguiendo patron DAO realiza una implementacion de dicho patron, para acceder mediante
+HIBERNATE a bd MySQL.
+
+El DAO contiene los siguientes métodos:
+
+- boolean crear (Incidencia i)
