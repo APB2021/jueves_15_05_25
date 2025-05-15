@@ -100,7 +100,5 @@ public class Incidencia implements Serializable {
 		return "Incidencia [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fecha=" + fecha
 				+ ", estado=" + estado + ", id_tecnico=" + id_tecnico + "]";
 	}
-	
-	
 
 }

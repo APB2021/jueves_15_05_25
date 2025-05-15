@@ -2,11 +2,11 @@
 
 	<persistence-unit name="HibernatePU" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-	<class>gm.domain.Persona</class>
+	<class>modelo.Persona</class>
 	<properties>
-		<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibernateejemplo1?useSSL=true&amp;useTimezone=true&amp;serverTimezone=UTC"/>
-		<property name="jakarta.persistence.jdbc.user" value="root"/>
-		<property name="jakarta.persistence.jdbc.password" value="root"/>
+		<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/incidencias?useSSL=true&amp;useTimezone=true&amp;serverTimezone=UTC"/>
+		<property name="jakarta.persistence.jdbc.user" value="alberto"/>
+		<property name="jakarta.persistence.jdbc.password" value="alberto"/>
 		<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 	</properties>
 	</persistence-unit>
