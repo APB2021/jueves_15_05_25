@@ -16,14 +16,14 @@ public class Tecnico implements Serializable {
 
 	private static final long serialVersionUID = 2339010496666921604L;
 
-	@Column(name = "id")
+	@Column(name = "id_tecnico")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int id; // id INT PRIMARY KEY AUTO_INCREMENT,
-	
+	private int id_tecnico; // id INT PRIMARY KEY AUTO_INCREMENT,
+
 	@Column(name = "nombre", nullable = false)
 	private String nombre;
-	
+
 	@Column(name = "email", nullable = false)
 	private String email;
 
@@ -35,18 +35,18 @@ public class Tecnico implements Serializable {
 		this.email = email;
 	}
 
-	public Tecnico(int id, String nombre, String email) {
-		this.id = id;
+	public Tecnico(int id_tecnico, String nombre, String email) {
+		this.id_tecnico = id_tecnico;
 		this.nombre = nombre;
 		this.email = email;
 	}
 
-	public int getId() {
-		return id;
+	public int getId_tecnico() {
+		return id_tecnico;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId_tecnico(int id_tecnico) {
+		this.id_tecnico = id_tecnico;
 	}
 
 	public String getNombre() {
@@ -67,7 +67,7 @@ public class Tecnico implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Tecnico [id=" + id + ", nombre=" + nombre + ", email=" + email + "]";
+		return "Tecnico [id_tecnico=" + id_tecnico + ", nombre=" + nombre + ", email=" + email + "]";
 	}
 
 }

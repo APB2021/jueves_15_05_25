@@ -5,9 +5,12 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,80 +35,35 @@ public class Incidencia implements Serializable {
 	@Column(name = "estado", nullable = false)
 	private String estado; // estado VARCHAR(50) NOT NULL, CHECK // (estado IN ('Abierta', 'En progreso',
 							// 'Cerrada')),
-	private int id_tecnico;
+
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_tecnico")
+	private Tecnico tecnico;
 
 	public Incidencia() {
 	}
 
-	public Incidencia(String titulo, String descripcion, Date fecha, String estado, int id_tecnico) {
+	public Incidencia(String titulo, String descripcion, Date fecha, String estado, Tecnico tecnico) {
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
 		this.estado = estado;
-		this.id_tecnico = id_tecnico;
+		this.tecnico = tecnico;
 	}
 
-	public Incidencia(int id, String titulo, String descripcion, Date fecha, String estado, int id_tecnico) {
+	public Incidencia(int id, String titulo, String descripcion, Date fecha, String estado, Tecnico tecnico) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fecha = fecha;
 		this.estado = estado;
-		this.id_tecnico = id_tecnico;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public int getId_tecnico() {
-		return id_tecnico;
-	}
-
-	public void setId_tecnico(int id_tecnico) {
-		this.id_tecnico = id_tecnico;
+		this.tecnico = tecnico;
 	}
 
 	@Override
 	public String toString() {
 		return "Incidencia [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fecha=" + fecha
-				+ ", estado=" + estado + ", id_tecnico=" + id_tecnico + "]";
+				+ ", estado=" + estado + ", tecnico=" + tecnico + "]";
 	}
 
 }
