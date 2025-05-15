@@ -20,7 +20,11 @@ public class Tecnico implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id; // id INT PRIMARY KEY AUTO_INCREMENT,
+	
+	@Column(name = "nombre", nullable = false)
 	private String nombre;
+	
+	@Column(name = "email", nullable = false)
 	private String email;
 
 	public Tecnico() {

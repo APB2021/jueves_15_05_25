@@ -19,10 +19,17 @@ public class Incidencia implements Serializable {
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private int id; // id INT PRIMARY KEY AUTO_INCREMENT,
+	private int id;
+
+	@Column(name = "titulo", nullable = false)
 	private String titulo; // titulo VARCHAR(50) NOT NULL,
+
+	@Column(name = "descripcion", nullable = false)
 	private String descripcion; // descripcion VARCHAR(50) NOT NULL,
+
 	private Date fecha; // fecha DATE NOT NULL,
+
+	@Column(name = "estado", nullable = false)
 	private String estado; // estado VARCHAR(50) NOT NULL, CHECK // (estado IN ('Abierta', 'En progreso',
 							// 'Cerrada')),
 	private int id_tecnico;
