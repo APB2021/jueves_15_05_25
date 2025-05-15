@@ -1,8 +1,25 @@
 package modelo;
 
-public class Tecnico {
+import java.io.Serializable;
 
-	private int id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tecnicos")
+
+public class Tecnico implements Serializable {
+
+	private static final long serialVersionUID = 2339010496666921604L;
+
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private int id; // id INT PRIMARY KEY AUTO_INCREMENT,
 	private String nombre;
 	private String email;
 

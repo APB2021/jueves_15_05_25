@@ -1,34 +1,50 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Incidencia {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-	private int id;
-	private String titulo;
-	private String descripcion;
-	private Date fechaCreacion;
-	private int estado;
-	private int tecnico;
+@Entity
+@Table(name = "incidencias")
+public class Incidencia implements Serializable {
+
+	private static final long serialVersionUID = -3507503388498013262L;
+
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private int id; // id INT PRIMARY KEY AUTO_INCREMENT,
+	private String titulo; // titulo VARCHAR(50) NOT NULL,
+	private String descripcion; // descripcion VARCHAR(50) NOT NULL,
+	private Date fecha; // fecha DATE NOT NULL,
+	private String estado; // estado VARCHAR(50) NOT NULL, CHECK // (estado IN ('Abierta', 'En progreso',
+							// 'Cerrada')),
+	private int id_tecnico;
 
 	public Incidencia() {
 	}
 
-	public Incidencia(String titulo, String descripcion, Date fechaCreacion, int estado, int tecnico) {
+	public Incidencia(String titulo, String descripcion, Date fecha, String estado, int id_tecnico) {
 		this.titulo = titulo;
 		this.descripcion = descripcion;
-		this.fechaCreacion = fechaCreacion;
+		this.fecha = fecha;
 		this.estado = estado;
-		this.tecnico = tecnico;
+		this.id_tecnico = id_tecnico;
 	}
 
-	public Incidencia(int id, String titulo, String descripcion, Date fechaCreacion, int estado, int tecnico) {
+	public Incidencia(int id, String titulo, String descripcion, Date fecha, String estado, int id_tecnico) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
-		this.fechaCreacion = fechaCreacion;
+		this.fecha = fecha;
 		this.estado = estado;
-		this.tecnico = tecnico;
+		this.id_tecnico = id_tecnico;
 	}
 
 	public int getId() {
@@ -55,34 +71,36 @@ public class Incidencia {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFechaCreacion() {
-		return fechaCreacion;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaCreacion(Date fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
-	public int getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	public void setEstado(int estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	public int getTecnico() {
-		return tecnico;
+	public int getId_tecnico() {
+		return id_tecnico;
 	}
 
-	public void setTecnico(int tecnico) {
-		this.tecnico = tecnico;
+	public void setId_tecnico(int id_tecnico) {
+		this.id_tecnico = id_tecnico;
 	}
 
 	@Override
 	public String toString() {
-		return "Incidencia [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fechaCreacion="
-				+ fechaCreacion + ", estado=" + estado + ", tecnico=" + tecnico + "]";
+		return "Incidencia [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fecha=" + fecha
+				+ ", estado=" + estado + ", id_tecnico=" + id_tecnico + "]";
 	}
+	
+	
 
 }
