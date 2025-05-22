@@ -1,12 +1,12 @@
 package test;
 
-import dao.IncidenciaDao;
+import dao.IncidenciaDAO;
 import modelo.Incidencia;
 
 public class OperacionesHibernateJPA {
 
 	public static void main(String[] args) {
-		try (IncidenciaDao incidenciaDao = new IncidenciaDao()) {
+		try (IncidenciaDAO incidenciaDao = new IncidenciaDAO()) {
 
 			// insertar
 			Incidencia incidencia = new Incidencia();
