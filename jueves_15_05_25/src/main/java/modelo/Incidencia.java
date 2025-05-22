@@ -1,7 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,7 +30,7 @@ public class Incidencia implements Serializable {
 	@Column(name = "descripcion", nullable = false)
 	private String descripcion; // descripcion VARCHAR(50) NOT NULL,
 
-	private Date fecha; // fecha DATE NOT NULL,
+	private LocalDate fecha; // fecha DATE NOT NULL,
 
 	@Column(name = "estado", nullable = false)
 	private String estado; // estado VARCHAR(50) NOT NULL, CHECK // (estado IN ('Abierta', 'En progreso',
@@ -43,15 +43,7 @@ public class Incidencia implements Serializable {
 	public Incidencia() {
 	}
 
-	public Incidencia(String titulo, String descripcion, Date fecha, String estado, Tecnico tecnico) {
-		this.titulo = titulo;
-		this.descripcion = descripcion;
-		this.fecha = fecha;
-		this.estado = estado;
-		this.tecnico = tecnico;
-	}
-
-	public Incidencia(int id, String titulo, String descripcion, Date fecha, String estado, Tecnico tecnico) {
+	public Incidencia(int id, String titulo, String descripcion, LocalDate fecha, String estado, Tecnico tecnico) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -59,6 +51,15 @@ public class Incidencia implements Serializable {
 		this.estado = estado;
 		this.tecnico = tecnico;
 	}
+	
+	/*
+	 * 
+	 * 
+	 * (1, "Pantalla azul", "Error grave", LocalDate.now(), "Abierta", "Juan",
+				"juan@ejemplo.com");
+	 * 
+	 * 
+	 * */
 
 	public int getId() {
 		return id;
@@ -84,11 +85,11 @@ public class Incidencia implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 
@@ -111,11 +112,7 @@ public class Incidencia implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	@Override
-	public String toString() {
-		return "Incidencia [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fecha=" + fecha
-				+ ", estado=" + estado + ", tecnico=" + tecnico + "]";
-	}
+	
+	
 
 }
