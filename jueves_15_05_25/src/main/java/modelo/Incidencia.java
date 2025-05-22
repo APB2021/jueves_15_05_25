@@ -63,6 +63,12 @@ public class Incidencia implements Serializable {
 
 		Tecnico tecnico = new Tecnico();
 
+		String nombre = this.tecnico.getNombre();
+		String email = this.tecnico.getEmail();
+
+		nombre = nombreTecnico;
+		email = emailTecnico;
+
 	}
 	/*
 	 * 

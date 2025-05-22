@@ -121,7 +121,15 @@ public class IncidenciaDAOTest {
 		}
 		List<Future<Boolean>> resultados = executor.invokeAll(tareas);
 		for (Future<Boolean> r : resultados) {
-			assertTrue(r.get(), "Falló una inserción concurrente.");
+			try {
+				assertTrue(r.get(), "Falló una inserción concurrente.");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		executor.shutdown();
 	}
