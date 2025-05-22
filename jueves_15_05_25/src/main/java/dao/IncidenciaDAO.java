@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 import modelo.Incidencia;
 
 public interface IncidenciaDAO {
-	
+
 	static final Logger loggerGeneral = LogManager.getRootLogger();
 	static final Logger loggerExcepciones = LogManager.getLogger("exceptions");
 
@@ -23,4 +23,5 @@ public interface IncidenciaDAO {
 	List<Incidencia> buscarPorestado(String estado);
 
 	boolean eliminarPorId(int id);
+
 }

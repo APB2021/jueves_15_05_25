@@ -79,7 +79,7 @@ public class IncidenciaDAOTest {
 
 	@Test
 	public void testBuscarPorEstado() {
-		List<Incidencia> abiertas = dao.buscarPorEstado("Abierta");
+		List<Incidencia> abiertas = dao.buscarPorestado("Abierta");
 		assertNotNull(abiertas);
 	}
 
