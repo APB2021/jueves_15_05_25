@@ -53,6 +53,11 @@ public class Incidencia implements Serializable {
 		this.tecnico = tecnico;
 	}
 
+	/*
+	 * (1, "Pantalla azul", "Error grave", LocalDate.now(), "Abierta", "Juan",
+	 * "juan@ejemplo.com");
+	 */
+
 	public Incidencia(int id, String titulo, String descripcion, LocalDate fechaCreacion, String estado,
 			String nombreTecnico, String emailTecnico) {
 		this.id = id;
@@ -60,22 +65,9 @@ public class Incidencia implements Serializable {
 		this.descripcion = descripcion;
 		this.fechaCreacion = fechaCreacion;
 		this.estado = estado;
-
-		String nombre = this.tecnico.getNombre();
-		String email = this.tecnico.getEmail();
-
-		nombre = nombreTecnico;
-		email = emailTecnico;
-
+		this.tecnico.setNombre(nombreTecnico);
+		this.tecnico.setEmail(emailTecnico);
 	}
-	/*
-	 * 
-	 * 
-	 * (1, "Pantalla azul", "Error grave", LocalDate.now(), "Abierta", "Juan",
-	 * "juan@ejemplo.com");
-	 * 
-	 * 
-	 */
 
 	public int getId() {
 		return id;
