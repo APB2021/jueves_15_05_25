@@ -14,3 +14,21 @@ HIBERNATE a bd MySQL.
 El DAO contiene los siguientes métodos:
 
 - boolean crear (Incidencia i)
+
+
+
+
+-----------------------------------
+Jueves 22-05-2025
+
+1.- Partiendo de la solucion de la parte 1, añade estos métodos al "IncidenciaDAO":
+
+- List <Incidencia> listarTodas()
+- Incidencia buscarPorId(int id)
+- boolean actualizarEstado(int id, String nuevoEstado)
+- List <Incidencia> buscarPorEstado(String estado)
+- boolean eliminarPorId(int id)
+
+2.- Debes realizar un control de errores en el DAO, utilizando un fichero de log.
+
+3.- Comprueba que todas las operaciones funcionan correctamente ejecutando el conjunto de pruebas de JUnit proporcionado por el profesor.
