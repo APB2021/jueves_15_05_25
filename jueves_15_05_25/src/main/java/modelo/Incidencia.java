@@ -61,8 +61,6 @@ public class Incidencia implements Serializable {
 		this.fechaCreacion = fechaCreacion;
 		this.estado = estado;
 
-		Tecnico tecnico = new Tecnico();
-
 		String nombre = this.tecnico.getNombre();
 		String email = this.tecnico.getEmail();
 
