@@ -21,37 +21,31 @@ public class IncidenciaDAOTest {
 
 			@Override
 			public List<Incidencia> listarTodas() {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public boolean eliminarPorId(int id) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 
 			@Override
 			public boolean crear(Incidencia i) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 
 			@Override
 			public List<Incidencia> buscarPorestado(String estado) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public Incidencia buscarPorId(int id) {
-				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
 			public boolean actualizarEstado(int id, String nuevoEstado) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		};
@@ -124,10 +118,8 @@ public class IncidenciaDAOTest {
 			try {
 				assertTrue(r.get(), "Falló una inserción concurrente.");
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
